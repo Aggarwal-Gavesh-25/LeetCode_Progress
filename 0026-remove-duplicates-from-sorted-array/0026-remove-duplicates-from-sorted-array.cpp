@@ -1,7 +1,7 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        //if (nums.empty()) return 0;
+        if (nums.empty()) return 0;
 
         int k = 1;  // Start from the second element
         
