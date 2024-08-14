@@ -1,13 +1,12 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        
+        // uses no extra space
         int n = nums.size();
-        vector<int> arr = nums;
+        k = k % n;
         
-        for(int i=0; i<n; i++){
-            int pos = (i+k) % n;
-            nums[pos] = arr[i];
-        }
+        reverse(nums.begin(), nums.begin()+n);
+        reverse(nums.begin(), nums.begin()+k);
+        reverse(nums.begin()+k, nums.begin()+n);
     }
 };
