@@ -5,8 +5,7 @@ public:
         int tempcount=0;
         
         for(int i=0; i<nums.size(); i++){
-            if(nums[i]==1 && i==0) tempcount+=1;
-            else if(nums[i]==1 && i!=0){
+            if(nums[i]==1){
                 tempcount+=1;
             }
             else{
