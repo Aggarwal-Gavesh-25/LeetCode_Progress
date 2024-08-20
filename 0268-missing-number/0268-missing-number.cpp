@@ -1,21 +1,19 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int max = *max_element(nums.begin(),nums.end());
-        int i=0;
+        // T= n
+        // S= nil
+        // sum method 
+        // optimal
         
-        for(i=0; i<=max; i++){
-            bool found=false;
-            for(auto it:nums){
-                if(it==i) {
-                    found=true;
-                    break;
-                }
-            }
-            if(found == false){
-            break;
-            }
+        int max = *max_element(nums.begin(),nums.end());
+        long long sum = (nums.size()*(nums.size()+1))/2;
+        
+        long long arrsum = 0;
+        for(int i=0; i<nums.size(); i++){
+            arrsum += nums[i];
         }
-        return i;
+        
+        return sum-arrsum;
     }
 };
