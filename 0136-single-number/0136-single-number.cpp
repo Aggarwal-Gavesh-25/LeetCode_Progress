@@ -1,17 +1,16 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
+        // XOR
+        // 1^1 ^ 2^2 ^ 4 = 4
+        // T= n
+        // S= nil
         
-        if(nums.size()==1) return nums[0];
-
-        sort(nums.begin(),nums.end());
-        for(int i=1; i<nums.size(); i++){
-            if(nums[i]!=nums[i-1]){
-                if(nums[i]!=nums[i+1]) return nums[i];
-                if(i==nums.size()-1) return nums[i];
-                if(i==1) return nums[0];
-            }
+        int XOR =0;
+        
+        for(int i=0; i<nums.size(); i++){
+            XOR = XOR^nums[i];
         }
-        return 0;
+        return XOR;
     }
 };
