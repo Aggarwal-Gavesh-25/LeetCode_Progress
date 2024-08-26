@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
+        // T= n
+        // S= 1
         if(s.size() != t.size()) return false;
         
         vector<int> hash(26);
